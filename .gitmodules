@@ -1,0 +1,6 @@
+[submodule "dot_custom/external_liquidprompt"]
+	path = dot_custom/external_liquidprompt
+	url = https://github.com/liquidprompt/liquidprompt.git
+[submodule "dot_custom/external_liquidprompt-powerline"]
+	path = dot_custom/external_liquidprompt-powerline
+	url = https://github.com/liquidprompt/liquidprompt-powerline.git
