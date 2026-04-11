@@ -18,28 +18,15 @@ export PATH
 # interactive shell mods
 if [[ $- = *i* ]]; then
 
-  # inside distrobox
-  if [ -n "$container" ] || [ -f /run/.containerenv ] || [ -f /.dockerenv ]; then
-    export LP_PS1_PREFIX="📦 $CONTAINER_ID"
-    export LP_ENABLE_SHLVL=0
-  fi
-  export LP_USER_ALWAYS=0
-
-  # load liquit prompt
-  source ~/.custom/liquidprompt/liquidprompt
-  source ~/.custom/liquidprompt-powerline/powerline.theme
-  lp_theme powerline_full
-
   source ~/.custom/sensible.bash
-
   source ~/.custom/commacd.sh
+  source ~/.custom/pureline/pureline ~/.pureline.conf
 
   alias ll='ls -l'
   alias l='ls -lA'
 
-
   # fix for opening nano inside of tmux
-  export TERM=xterm
+  #export TERM=xterm
 
   alias dc='docker compose'
   alias dcu='docker compose up -d --pull always --remove-orphans'
