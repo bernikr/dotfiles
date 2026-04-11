@@ -20,7 +20,9 @@ if [[ $- = *i* ]]; then
 
   source ~/.custom/sensible.bash
   source ~/.custom/commacd.sh
-  source ~/.custom/pureline/pureline ~/.pureline.conf
+  if [ "$TERM" != "linux" ]; then
+    source ~/.custom/pureline/pureline ~/.pureline.conf
+  fi
 
   alias ll='ls -l'
   alias l='ls -lA'
