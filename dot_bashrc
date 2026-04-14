@@ -27,8 +27,10 @@ if [[ $- = *i* ]]; then
   alias ll='ls -l'
   alias l='ls -lA'
 
-  # fix for opening nano inside of tmux
-  #export TERM=xterm
+  # fix for opening older nano versions inside of tmux
+  if [[ "$TERM" == "tmux-256color" ]]; then
+    export TERM=screen-256color
+  fi
 
   alias dc='docker compose'
   alias dcu='docker compose up -d --pull always --remove-orphans'
