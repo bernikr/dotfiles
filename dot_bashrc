@@ -29,7 +29,7 @@ if [[ $- = *i* ]]; then
 
   # fix for opening older nano versions inside of tmux
   if [[ "$TERM" == "tmux-256color" ]]; then
-    export TERM=xterm-256color
+    export TERM=xterm-color
   fi
 
   alias dc='docker compose'
