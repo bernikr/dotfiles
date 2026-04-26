@@ -47,3 +47,13 @@ if [[ $- = *i* ]]; then
 
   alias d='distrobox enter'
 fi
+
+# include parts from .bashrc.d folder
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
