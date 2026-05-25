@@ -1,0 +1,8 @@
+#!/bin/bash
+
+rpm-ostree status > /home/bernie/system-info.txt
+rpm-ostree kargs >> /home/bernie/system-info.txt
+
+sudo -E proxmox-backup-client backup home.pxar:/home var.pxar:/var etc.pxar:/etc --change-detection-mode=metadata
+
+rm /home/bernie/system-info.txt
