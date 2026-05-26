@@ -2,3 +2,5 @@ encryption = "age"
 [age]
     identity = "~/.config/chezmoi/key.txt"
     recipient = "age1vm5d0qdk5kqxjycma29r799j8z9w0yq8kh2njk4yr252ma6p85rqan8pd2"
+[data]
+    install_tools = {{ promptBoolOnce . "install_tools" "Would you like to install additional tools? (uv, yasi, wormhole, ...)" true }}
