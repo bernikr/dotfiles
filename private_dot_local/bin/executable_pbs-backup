@@ -2,6 +2,7 @@
 
 rpm-ostree status > /home/bernie/system-info.txt
 rpm-ostree kargs >> /home/bernie/system-info.txt
+sudo ostree admin config-diff >> /home/bernie/system-info.txt
 
 sudo -E proxmox-backup-client backup home.pxar:/home var.pxar:/var etc.pxar:/etc --change-detection-mode=metadata
 
