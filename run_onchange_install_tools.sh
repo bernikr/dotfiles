@@ -68,6 +68,7 @@ brew "jq"
 brew "uv"
 brew "yazi"
 brew "magic-wormhole"
+brew "pv"
 
 EOF
 chmod 644 "$BREWFILE"
