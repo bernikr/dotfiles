@@ -12,42 +12,6 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
 fi
 export PATH
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# interactive shell mods
-if [[ $- = *i* ]]; then
-
-  source ~/.custom/sensible.bash
-  source ~/.custom/commacd.sh
-  if [ "$TERM" != "linux" ]; then
-    source ~/.custom/pureline/pureline ~/.pureline.conf
-  fi
-
-  alias ll='ls -l'
-  alias l='ls -lA'
-
-  # fix for opening older nano versions inside of tmux
-  if [[ "$TERM" == "tmux-256color" ]]; then
-    export TERM=xterm-color
-  fi
-
-  alias dc='docker compose'
-  alias dcu='docker compose up -d --pull always --remove-orphans'
-  alias dcb='docker compose --progress=plain build'
-  alias dcub='docker compose up -d --pull always --build --remove-orphans'
-  alias dcbu=dcub
-  alias dcl='docker compose logs -f -n 100'
-  alias dcul='dcu && dcl'
-  alias dcr='docker compose restart'
-
-  alias rsync='rsync --info=progress2'
-
-  alias dive="docker run -ti --rm  -v /var/run/docker.sock:/var/run/docker.sock docker.io/wagoodman/dive"
-
-  alias t="tmux -u new-session -A -s default"
-fi
-
 # include parts from .bashrc.d folder
 if [ -d ~/.bashrc.d ]; then
     for rc in ~/.bashrc.d/*; do
