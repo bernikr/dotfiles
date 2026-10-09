@@ -44,6 +44,8 @@ if [[ $- = *i* ]]; then
   alias rsync='rsync --info=progress2'
 
   alias dive="docker run -ti --rm  -v /var/run/docker.sock:/var/run/docker.sock docker.io/wagoodman/dive"
+
+  alias t="tmux -u new-session -A -s default"
 fi
 
 # include parts from .bashrc.d folder
