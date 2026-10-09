@@ -69,6 +69,7 @@ brew "uv"
 brew "yazi"
 brew "magic-wormhole"
 brew "pv"
+brew "bash-completion@2"
 
 EOF
 chmod 644 "$BREWFILE"

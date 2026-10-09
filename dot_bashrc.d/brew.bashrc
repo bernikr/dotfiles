@@ -2,9 +2,12 @@
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # 2. Source all completions installed by Homebrew
-if [[ -d "/home/linuxbrew/.linuxbrew/etc/bash_completion.d" ]]; then
-  for completion_script in "/home/linuxbrew/.linuxbrew/etc/bash_completion.d/"*; do
-    [[ -r "$completion_script" ]] && source "$completion_script"
-  done
-  unset completion_script
+if [[ $- = *i* ]]; then # interactive shell only
+  [[ -r "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh" ]] && . "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh"
+  if [[ -d "/home/linuxbrew/.linuxbrew/etc/bash_completion.d" ]]; then
+    for completion_script in "/home/linuxbrew/.linuxbrew/etc/bash_completion.d/"*; do
+      [[ -r "$completion_script" ]] && source "$completion_script"
+    done
+    unset completion_script
+  fi
 fi
